@@ -83,6 +83,7 @@ gem "sorcery"
 
 gem 'devise'
 
+gem 'ransack'
 
 
 
