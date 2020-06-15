@@ -3,3 +3,54 @@
 
 <h1>詳しい投稿内容</h1>
 
+<table class="table">
+	<tr>
+		<h3>Before After画像</h3>
+	</tr>
+
+	<tr>
+		<%= attachment_image_tag(@post, :post_image, :fill, 150, 150, fallback: "no_image.jpg") %>
+	</tr>
+
+	<tr>
+		<h3>使用薬剤メーカー</h3>
+	</tr>
+	<tr>
+		<%= @post.maker %>
+	</tr>
+
+	<tr>
+		<h3>色味</h3>
+	</tr>
+	<tr>
+		<%= @post.color %>
+	</tr>
+
+	<tr>
+		<h3>投稿者名</h3>
+	</tr>
+	<tr>
+		<%= @post.name %>
+	</tr>
+
+	<tr>
+		<h3>配合・施術の説明</h3>
+	</tr>
+
+	<tr>
+		<%= @post.option %>
+	</tr>
+</table>
+
+	<div>
+		<%= link_to "投稿一覧に戻る", posts_path %>
+	</div>
+
+
+
+	<div>
+
+		<%= link_to "投稿内容編集ページへ", edit_post_path %>
+		<%= link_to "投稿を削除する", post_path(@post), method: :delete %>
+
+	</div>

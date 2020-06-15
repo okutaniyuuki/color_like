@@ -2,60 +2,50 @@
 
 <table class="table">
 	<tr>
-		<th>
-			<%= attachment_image_tag(@user, :image, :fill, 100, 100, fallback: "no_image.jpg") %>
-		</th>
+		<%= attachment_image_tag(@user, :image, :fill, 100, 100, fallback: "no_image.jpg") %>
 	</tr>
 
 	<tr>
-		<th>
-			<%= @user.first_name %>  <%= @user.last_name %>
-		</th>
+		<%= @user.first_name %>  <%= @user.last_name %>
 	</tr>
 
 	<tr>
-		<th><h3>得意な技術</h3></th>
-		<th><%= @user.forte %></th>
+		<h3>得意な技術</h3>
 	</tr>
 
 	<tr>
-		<th><h3>好きなメーカー</h3></th>
-		<th><%= @user.like_maker %></th>
+		<%= @user.forte %>
 	</tr>
 
 	<tr>
-		<th><h3>プロフィール</h3></th>
-		<th><%= @user.introduction %></th>
+		<h3>好きなメーカー</h3>
+	</tr>
+
+	<tr>
+		<%= @user.like_maker %>
+	</tr>
+
+	<tr>
+		<h3>プロフィール</h3>
+	</tr>
+
+	<tr>
+		<%= @user.introduction %>
 	</tr>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div>
 	<%= link_to "投稿ページへ", new_post_path %>
 </div>
 
 <div>
-	<%= link_to"お気に入り一覧", bookmarks_path %>
+	<%= link_to "お気に入り一覧ページへ", bookmarks_path %>
 </div>
 
 <div>
-	<%= link_to "マイページへ",user_path %>
+	<%= link_to "マイページの編集をする", edit_user_path %>
 </div>
 
 <div>
-	<%= link_to "自分の投稿一覧", posts_path %>
+	<%= link_to "投稿一覧へ", posts_path %>
 </div>

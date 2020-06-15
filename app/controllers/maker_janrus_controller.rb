@@ -8,5 +8,6 @@ class MakerJanrusController < ApplicationController
 
   end
   def search
+  	@maker  = Maker.search(params[:search])
   end
 end

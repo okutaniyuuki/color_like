@@ -19,21 +19,21 @@
 
             <!--if文でサインインとアウト時の表示を変更-->
             <% if user_signed_in? %>
-            <li><%= link_to 'マイページ ', user_path%></li>
+            <li><%= link_to 'マイページ ', user_path(current_user.id)%></li>
             <li><%= link_to 'メーカー別検索', maker_janrus_path %></li>
             <li><%= link_to 'カラー検索',color_janrus_path %></li>
             <li><%= link_to "ログアウト", destroy_user_session_path,  method: :delete %></li>
 
-　　　　　<nav>
-　　　　　　<ul class="nav navbar-nav">
+          <nav>
+          <ul class="nav navbar-nav">
             <% else %>
             <li><%= link_to ' Top', root_path %></li>
             <li><%= link_to ' 新規登録', new_user_registration_path %></li>
             <li><%= link_to ' ログイン', new_user_session_path %></li>
             <% end %>
 
-         　</ul>
-　　　　　</nav>
+          </ul>
+          </nav>
       </header>
 
 

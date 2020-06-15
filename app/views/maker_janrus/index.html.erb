@@ -1,2 +1,14 @@
 <h1>MakerJanrus#index</h1>
-<p>Find me in app/views/maker_janrus/index.html.erb</p>
+
+
+<%= form_tag(post_path,:method => 'get') do %>
+<%= text_field_tag :key_word %>
+
+<%= f.select Post.find_by(maker: params[:key_word]), [["シュワルツコフ",1], ["資生堂",2], ["ミルボン",3], ["モルトベーネ",4], ["ロレアル",5], ["hoyu",6], ["ルベル",7], ["ウェラ",8], ["マニパニ",9], ["その他",10] ], prompt: "使用メーカーをを選びください。" %>
+<%= submit_tag 'Search',  %>
+<% end %>
+
+
+
+
+

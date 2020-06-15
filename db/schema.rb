@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_065341) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
-    t.string "post_image"
+    t.string "post_image_id"
     t.text "option"
     t.string "color"
     t.string "maker"
