@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_065341) do
+ActiveRecord::Schema.define(version: 2020_06_18_124624) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "post_image_id"
   end
 
   create_table "color_janrus", force: :cascade do |t|
-    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -33,9 +34,9 @@ ActiveRecord::Schema.define(version: 2020_06_10_065341) do
   end
 
   create_table "maker_janrus", force: :cascade do |t|
-    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -50,8 +51,8 @@ ActiveRecord::Schema.define(version: 2020_06_10_065341) do
     t.integer "user_id"
     t.string "post_image_id"
     t.text "option"
-    t.string "color"
-    t.string "maker"
+    t.string "color_janru_id"
+    t.string "maker_janru_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"

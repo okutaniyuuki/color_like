@@ -1,4 +1,8 @@
-class MessagesController < ApplicationController
+
+
+
+
+class MessageController < ApplicationController
   def index
     @message = Message.new
   end

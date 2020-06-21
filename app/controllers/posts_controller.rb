@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :ensure_correct_user,{only: [:edit,:update,:destroy]}
+ # before_action :ensure_correct_user,{only: [:edit,:update,:destroy]}
 
   def new
     @post = Post.new
@@ -39,6 +39,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
+
   end
 
   def destroy
@@ -47,10 +48,19 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+   def search
+
+    if (params[:maker_janru_name].nil?)
+      @posts = Post.where(color_janru_id: params[:color_janru_name])
+    else
+      @posts = Post.where(maker_janru_id: params[:maker_janru_name])
+    end
+    render :index
+   end
 
 
   private
   def post_params
-    params.require(:post).permit(:post_image, :option, :color, :maker, :name,)
+    params.require(:post).permit(:post_image, :option, :color, :maker, :name, :maker_janru_name, :color_janru_name)
   end
 end

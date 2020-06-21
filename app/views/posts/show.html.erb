@@ -11,19 +11,24 @@
 	<tr>
 		<%= attachment_image_tag(@post, :post_image, :fill, 150, 150, fallback: "no_image.jpg") %>
 	</tr>
+     <tr>
+
+		<%= link_to @post.user.last_name, user_path(@post.user) %>
+		<%= link_to @post.user.first_name, user_path(@post.user) %>
+	</tr>
 
 	<tr>
 		<h3>使用薬剤メーカー</h3>
 	</tr>
 	<tr>
-		<%= @post.maker %>
+		<%= @post.maker_janru_id %>
 	</tr>
 
 	<tr>
 		<h3>色味</h3>
 	</tr>
 	<tr>
-		<%= @post.color %>
+		<%= @post.color_janru_id %>
 	</tr>
 
 	<tr>
@@ -40,6 +45,25 @@
 	<tr>
 		<%= @post.option %>
 	</tr>
+
+	<tr>
+		<% if @post.favorited_by?(current_user) %>
+			<li>
+			    <%= link_to favorite_path(@post.id, redirect_id: 0), method: :delete do %>
+			    <i  class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
+			    <%= @post.favorites.count %>
+			    <% end %>
+			</li>
+			<% else %>
+			<li>
+			    <%= link_to favorites_path(@post.id, redirect_id: 0), method: :post do %>
+			    <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
+			    <%= @post.favorites.count %>
+
+			    <% end %>
+			</li>
+		<% end %>
+	</tr>
 </table>
 
 	<div>
@@ -47,10 +71,9 @@
 	</div>
 
 
-
 	<div>
 
-		<%= link_to "投稿内容編集ページへ", edit_post_path %>
+		<%= link_to "投稿内容編集ページへ", edit_post_path(@post) %>
 		<%= link_to "投稿を削除する", post_path(@post), method: :delete %>
 
 	</div>

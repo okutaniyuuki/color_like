@@ -1,25 +1,33 @@
+
+
+
+
 <h1>投稿一覧</h1>
+
 
 <table>
 	<% @posts.each do |post| %>
 		<tr>
 			<td>
-				<%= post.name %>
+				<%= post.user.last_name %>
+				<%= post.user.first_name %>
 			<td>
 				<%= attachment_image_tag(post, :post_image, :fill, 150, 150, fallback: "no_image.jpg") %>
 			</td>
+			<th><%= post.name %></th>
 
 			<td>
-				<%=	post.maker %>
+				<%=	post.maker_janru_id %>
 			</td>
 
 			<td>
-				<%= post.color %>
+				<%= post.color_janru_id %>
 			</td>
 
-
-
-
+			<th>
+				<ハートのアイコン挿入>
+				<%= post.favorites.count %>
+			</th>
 
 
 			<td>

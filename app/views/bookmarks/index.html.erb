@@ -1,2 +1,36 @@
-<h1>Bookmarks#index</h1>
-<p>Find me in app/views/bookmarks/index.html.erb</p>
+<h1>お気に入り一覧</h1>
+
+<table>
+	<% @bookmark.each do |bookmark| %>
+		<tr>
+			<td>
+				<%= bookmark.user.last_name %>
+				<%= bookmark.user.first_name %>
+			<td>
+				<%= attachment_image_tag(bookmark, :post_image, :fill, 150, 150, fallback: "no_image.jpg") %>
+			</td>
+			<th><%= bookmark.name %></th>
+
+			<td>
+				<%=	bookmark.maker %>
+			</td>
+
+			<td>
+				<%= bookmark.color %>
+			</td>
+
+
+
+
+
+
+			<td>
+				<%= link_to "この投稿詳細へ", post_path(post) %>
+			</td>
+		</tr>
+	<% end %>
+
+
+
+
+</table>

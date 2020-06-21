@@ -1,13 +1,18 @@
+
+
 class MakerJanrusController < ApplicationController
-  def new
-  end
+
 
   def index
-  	@makers = Maker.all
-  	@maker = Maker.new
+  	@posts = Post.all
 
-  end
-  def search
-  	@maker  = Maker.search(params[:search])
+    @makers = MakerJanru.all
+
+    #
+    #
+    #
+    # これでセレクトボックスの中身を呼び出せる！
+    # maker_janru_params[:maker_janru_name]
   end
 end
+

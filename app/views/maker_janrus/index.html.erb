@@ -1,14 +1,12 @@
-<h1>MakerJanrus#index</h1>
-
-
-<%= form_tag(post_path,:method => 'get') do %>
-<%= text_field_tag :key_word %>
-
-<%= f.select Post.find_by(maker: params[:key_word]), [["シュワルツコフ",1], ["資生堂",2], ["ミルボン",3], ["モルトベーネ",4], ["ロレアル",5], ["hoyu",6], ["ルベル",7], ["ウェラ",8], ["マニパニ",9], ["その他",10] ], prompt: "使用メーカーをを選びください。" %>
-<%= submit_tag 'Search',  %>
-<% end %>
 
 
 
+<h1>メーカー検索</h1>
+<div class="form-group">
+	<%= form_with url:post_search_path,method: :get, local: true do |f| %>
+		<%= f.collection_select(:maker_janru_name, @makers, :name, :name,  prompt: "検索したいメーカーを選択してください") %>
+		<%= f.submit "検索" %>
 
+  	<% end %>
+</div>
 

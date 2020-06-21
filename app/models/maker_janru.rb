@@ -1,6 +1,10 @@
 class MakerJanru < ApplicationRecord
 
-belongs_to :post
+has_many :posts
+
+
+
+# Maker.where(['name LIKE ?', "%#{search}%"])
 
 
 end

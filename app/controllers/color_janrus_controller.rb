@@ -1,12 +1,16 @@
+
+
+
 class ColorJanrusController < ApplicationController
-  def new
-  end
+
 
   def index
-  	@colors = Color.all
-  	@color = Color.new
+
+  	@posts = Post.all
+    @color = ColorJanru.all
+
+
   end
 
-  def search
-  end
 end
+
