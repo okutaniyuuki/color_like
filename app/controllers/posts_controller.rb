@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).reverse_order
 
 
   end
@@ -48,15 +48,15 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-   def search
+ def search
 
-    if (params[:maker_janru_name].nil?)
-      @posts = Post.where(color_janru_id: params[:color_janru_name])
-    else
-      @posts = Post.where(maker_janru_id: params[:maker_janru_name])
-    end
-    render :index
-   end
+  if (params[:maker_janru_name].nil?)
+    @posts = Post.where(color_janru_id: params[:color_janru_name])
+  else
+    @posts = Post.where(maker_janru_id: params[:maker_janru_name])
+  end
+  render :index
+ end
 
 
   private
