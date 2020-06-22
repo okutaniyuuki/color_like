@@ -1,31 +1,32 @@
 class BookmarksController < ApplicationController
-  def show
-  	@post = Post.find(pamas[:id])
 
-
-  end
 
   def index
-    @bookmark = Bookmark.all
-    @bookmark = Bookmark.where("user_id = ?", @user)
+    @user  = current_user
+    @bookmarks = Bookmark.where(user_id: @user.id)
+
   end
 
   def create
-    @user_id = session[:id] #ログインしたユーザのID
-    @post_id = post.find(params[:id]).id #特定の本のID
-    #book_idに@book_id、user_idに@user_idを入れて、モデルに新しいオブジェクトを作る
-    @bookmark = Bookmark.new(post_id: @post_id, user_id: @user_id)
+    @bookmark = Bookmark.new(post_id:params[:post_id], user_id: current_user.id)
     if @bookmark.save
-      #保存に成功した場合、投稿詳細画面に戻る
-      redirect_to post_path
+      redirect_to bookmarks_path
+    else
+      redirect_to post_path(params[:post_id])
     end
   end
 
 
   def destroy
-  	@bookmark = Bookmark.find(pamas[:id])
-  	@bookmark.destroy
+  	@bookmark = Bookmark.find_by(post_id:pamas[:post_id],user_id:current_user.id)
+  	if @bookmark.destroy
   	redirect_to bookmareks_path
+    end
+  end
+
+  private
+  def user_params
+    params.require(:bookmark).permit(:user_id, :post_id)
   end
 
 

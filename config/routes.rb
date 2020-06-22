@@ -17,9 +17,14 @@ Rails.application.routes.draw do
 
 
   resources :users, only:[:show, :edit, :update, :new]
-  resources :posts
-  resources :bookmarks, only:[:show, :create, :index, :destroy]
-  resources :favorites, only:[:create, :destroy]
+  resources :posts do
+    post 'bookmarks'
+    delete 'bookmarks'
+    post 'favorites'
+    delete 'favorites'
+  end
+  resources :bookmarks,only:[:index]
+ # resources :favorites, only:[:create, :destroy]
   resources :maker_janrus, only:[:index, :create]
   resources :color_janrus, only:[:index]
 

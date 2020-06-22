@@ -49,20 +49,23 @@
 	<tr>
 		<% if @post.favorited_by?(current_user) %>
 			<li>
-			    <%= link_to favorite_path(@post.id, redirect_id: 0), method: :delete do %>
+			    <%= link_to favorite_path(post_id: @post.id , redirect_id: 0), method: :delete do %>
 			    <i  class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
 			    <%= @post.favorites.count %>
 			    <% end %>
 			</li>
 			<% else %>
 			<li>
-			    <%= link_to favorites_path(@post.id, redirect_id: 0), method: :post do %>
+			    <%= link_to favorites_path(post_id: @post.id, redirect_id: 0), method: :post do %>
 			    <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
 			    <%= @post.favorites.count %>
 
 			    <% end %>
 			</li>
 		<% end %>
+	</tr>
+	<tr>
+		<%= link_to "この投稿をお気に入り登録", post_bookmarks_path(@post.id), method: :post %>
 	</tr>
 </table>
 
