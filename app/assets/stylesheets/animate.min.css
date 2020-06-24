@@ -1,0 +1,12 @@
+.animation{
+  …
+  /* ５秒かけてアニメーションする */
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  /* 4秒待ってからアニメーションする */
+  -webkit-animation-duration: 1s;
+  animation-delay:1s;
+  /* 5回繰り返す */
+  -webkit-animation-iteration-count: 3;
+  animation-iteration-count: 3;
+}

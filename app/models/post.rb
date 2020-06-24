@@ -3,10 +3,14 @@ class Post < ApplicationRecord
 has_many :favorites
 has_many :bookmarks, dependent: :destroy
 
+#accepts_nested_attributes_for :images, allow_destroy: true
 
 belongs_to :user
 
 attachment :post_image
+attachment :after_image
+
+
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?

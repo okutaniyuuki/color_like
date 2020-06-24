@@ -1,12 +1,18 @@
 
+<main class="container">
+	<div class= "jumbotron">
+		<div class= "mj-main">
+			<div class="text-center text-muted">
+				<h1>メーカー検索</h1>
+				<div class="form-group">
+					<%= form_with url:post_search_path,method: :get, local: true do |f| %>
+						<%= f.collection_select(:maker_janru_name, @makers, :name, :name,  prompt: "検索したいメーカーを選択してください") %>
+						<%= f.submit "検索", class: "btn btn-warning" %>
 
-
-<h1>メーカー検索</h1>
-<div class="form-group">
-	<%= form_with url:post_search_path,method: :get, local: true do |f| %>
-		<%= f.collection_select(:maker_janru_name, @makers, :name, :name,  prompt: "検索したいメーカーを選択してください") %>
-		<%= f.submit "検索" %>
-
-  	<% end %>
-</div>
+				  	<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
 

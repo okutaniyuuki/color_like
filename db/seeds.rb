@@ -17,3 +17,18 @@ ColorJanru.create(name: "ベージュ系")
 ColorJanru.create(name: "シルバー・グレー・モノトーン系")
 ColorJanru.create(name: "ホワイト系")
 ColorJanru.create(name: "その他")
+
+MakerJanru.create(name: "その他")
+MakerJanru.create(name: "シュワルツコフ")
+MakerJanru.create(name: "資生堂")
+MakerJanru.create(name: "ミルボン")
+MakerJanru.create(name: "ロレアル")
+MakerJanru.create(name: "ウェラ")
+MakerJanru.create(name: "ルベル")
+MakerJanru.create(name: "hoyu")
+MakerJanru.create(name: "マニパニ")
+MakerJanru.create(name: "モルトベーネ")
+
+
+
+

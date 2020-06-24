@@ -1,24 +1,29 @@
-# README
+アプリ名
+カラーライク
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+このサイトはケアカラーが好きな方たちによる
+薬剤情報やオススメのメーカーのカラー剤の良いところ
+そしてカラーの配合レシピ・技術的知識をBefore After画像と共に検索したり
+検索して参考にするだけでな
+ご自身のオススメ配合レシピや情報を投稿して
+共有しあいもっと
+日頃のカラーワークが楽しくなるためのカラー専門のサイトです
 
-Things you may want to cover:
+### サイトテーマ
+ヘアカラーのについての情報共有
 
-* Ruby version
+### テーマを選んだ理由
+ヘアカラーの専門のサイトがなくあれば、便利だなと思っていたため
 
-* System dependencies
+### ターゲットユーザ
+カラーが好きな美容師
 
-* Configuration
+### 主な利用シーン
+普段のサランワークから薬剤の情報収集
 
-* Database creation
+## 設計書
 
-* Database initialization
+### 機能一覧
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://docs.google.com/spreadsheets/d/16RJvjaZpc-7W2gtHZqpPSz1QFzCGUGxiO7nEQ8wH6zY/edit#gid=0　

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'homes#top'
 
   get 'message/index' => 'message#index'
   get 'message/confirm' => 'message#confirm'
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
   #get 'posts/search'   =>  'posts#search'
   get 'post_search'   =>  'posts#search', as:   'post_search'
   #get 'users/index/:id' => 'users#index'
-  root 'homes#top'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -18,10 +18,10 @@ Rails.application.routes.draw do
 
   resources :users, only:[:show, :edit, :update, :new]
   resources :posts do
-    post 'bookmarks'
-    delete 'bookmarks'
-    post 'favorites'
-    delete 'favorites'
+    post 'createbookmarks'
+    delete 'desbookmarks'
+    post 'createfavorites'
+    delete 'desfavorites'
   end
   resources :bookmarks,only:[:index]
  # resources :favorites, only:[:create, :destroy]

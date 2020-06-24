@@ -7,37 +7,57 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    <link rel="stylesheet" href="animate.min.css">
   </head>
 
   <body>
       <header>
+        <div id ="container">
+        <div id = "theTarget">
+          <div class="image1"></div>
+          <div class="image2"></div>
+          <div class="image3"></div>
+          <div class="image4"></div>
+          <div class="image5"></div>
+        </div>
+      </div>
+              <div class="container">
+              <div class="row">
+                <div class="col-xs-5">
+                 <%= image_tag "icon.png", class: "img-responsive" %>
+                </div>
+                <div class="col-xs-7">
 
-      <h1>カラーライク</h1>
+                   <nav>
+                     <ul class="nav pull-right nav-pills">
+                      <!--if文でサインインとアウト時の表示を変更-->
+                      <% if user_signed_in? %>
+                      <li><%= link_to 'マイページ ', user_path(current_user.id)%></li>
+                      <li><%= link_to 'メーカー別検索', maker_janrus_path %></li>
+                      <li><%= link_to 'カラー検索',color_janrus_path %></li>
+                      <li><%= link_to "ログアウト", destroy_user_session_path,  method: :delete %></li>
 
-         <nav>
-           <ul class="nav navbar-nav">
+                    <nav>
+                <div class="col-xs-7">
+                    <ul class="nav pull-right nav-pills">
+                      <% else %>
+                      <li><%= link_to ' Top', root_path %></li>
+                      <li><%= link_to ' 新規登録', new_user_registration_path %></li>
+                      <li><%= link_to ' ログイン', new_user_session_path %></li>
+                      <% end %>
 
-            <!--if文でサインインとアウト時の表示を変更-->
-            <% if user_signed_in? %>
-            <li><%= link_to 'マイページ ', user_path(current_user.id)%></li>
-            <li><%= link_to 'メーカー別検索', maker_janrus_path %></li>
-            <li><%= link_to 'カラー検索',color_janrus_path %></li>
-            <li><%= link_to "ログアウト", destroy_user_session_path,  method: :delete %></li>
-
-          <nav>
-          <ul class="nav navbar-nav">
-            <% else %>
-            <li><%= link_to ' Top', root_path %></li>
-            <li><%= link_to ' 新規登録', new_user_registration_path %></li>
-            <li><%= link_to ' ログイン', new_user_session_path %></li>
-            <% end %>
-
-          </ul>
-          </nav>
+                    </ul>
+                    </nav>
+                </div>
+              </div>
+              </div>
       </header>
 
 
 
     <%= yield %>
+
   </body>
 </html>

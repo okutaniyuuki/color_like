@@ -1,97 +1,103 @@
-<h1>マイページ</h1>
+<div class="usershow">
+	<div class="text-center">
 
-<table class="table">
-	<tr>
-		<%= attachment_image_tag(@user, :image, :fill, 100, 100, fallback: "no_image.jpg") %>
-	</tr>
+			<h1>マイページ</h1>
 
-	<tr>
-		<%= @user.first_name %>  <%= @user.last_name %>
-	</tr>
+			<table class="table table-bordered">
+				<tr>
+					<%= attachment_image_tag(@user, :image, :fill, 100, 100, fallback: "no_image.jpg") %>
+				</tr>
 
-	<tr>
-		<h3>得意な技術</h3>
-	</tr>
+				<tr>
+					<%= @user.first_name %>  <%= @user.last_name %>
+				</tr>
 
-	<tr>
-		<%= @user.forte %>
-	</tr>
+				<tr>
+					<h3>得意な技術</h3>
+				</tr>
 
-	<tr>
-		<h3>好きなメーカー</h3>
-	</tr>
+				<tr>
+					<%= @user.forte %>
+				</tr>
 
-	<tr>
-		<%= @user.like_maker %>
-	</tr>
+				<tr>
+					<h3>好きなメーカー</h3>
+				</tr>
 
-	<tr>
-		<h3>プロフィール</h3>
-	</tr>
+				<tr>
+					<%= @user.like_maker %>
+				</tr>
 
-	<tr>
-		<%= @user.introduction %>
-	</tr>
-</table>
-<div>
-		<h4><%= link_to"お問い合わせはこちら", message_index_path %></h4>
-</div>
+				<tr>
+					<h3>プロフィール</h3>
+				</tr>
 
-
-<h1>自分の投稿一覧</h1>
-
-
-<table>
-	<% @post.each do |post| %>
-		<tr>
-			<td>
-				<%= post.user.last_name %>
-				<%= post.user.first_name %>
-			</td>
-				<%= attachment_image_tag(post, :post_image, :fill, 150, 150, fallback: "no_image.jpg") %>
-			</td>
-			<th><%= post.name %></th>
-
-			<td>
-				<%=	post.maker_janru_id %>
-			</td>
-
-			<td>
-				<%= post.color_janru_id %>
-			</td>
-
-			<th>
-				<ハートのアイコン挿入>
-				<%= post.favorites.count %>
-			</th>
+				<tr>
+					<%= @user.introduction %>
+				</tr>
+			</table>
+			<div>
+					<h4><%= link_to"お問い合わせはこちら", message_index_path, class: "btn btn-danger" %></h4>
+			</div>
 
 
-			<td>
-				<%= link_to "この投稿詳細へ", post_path(post) %>
-			</td>
-		</tr>
-	<% end %>
-</table>
-<div>
-	<%= paginate @post %>
-</div>
+			<h1>自分の投稿一覧</h1>
 
 
-<div>
-	<%= link_to "投稿ページへ", new_post_path %>
-</div>
+			<table class="table table-bordered">
+				<% @post.each do |post| %>
+					<tr>
+						<td>
+							<%= post.user.last_name %>
+							<%= post.user.first_name %>
+						</td>
+							<%= attachment_image_tag(post, :post_image, :fill, 150, 150, fallback: "no_image.jpg") %>
+						</td>
+						</td>
+							<%= attachment_image_tag(post, :after_image, :fill, 150, 150, fallback: "no_image.jpg") %>
+						</td>
+						<th><%= post.name %></th>
 
-<div>
-	<%= link_to "お気に入り一覧ページへ", bookmarks_path %>
-</div>
+						<td>
+							<%=	post.maker_janru_id %>
+						</td>
 
-<div>
-	<%= link_to "マイページの編集をする", edit_user_path %>
-</div>
+						<td>
+							<%= post.color_janru_id %>
+						</td>
 
-<div>
-	<%= link_to "投稿一覧へ", posts_path %>
-</div>
-<div>
-	<%= link_to "自分の投稿一覧へ", user_path %>
+						<th>
+							<ハートのアイコン挿入>
+							<%= post.favorites.count %>
+						</th>
+
+
+						<td>
+							<%= link_to "この投稿詳細へ", post_path(post), class: "btn btn-primary" %>
+						</td>
+					</tr>
+				<% end %>
+			</table>
+			<div>
+				<%= paginate @post %>
+			</div>
+
+		<div class= row>
+			<div class= col-xs-3>
+				<%= link_to "投稿ページへ", new_post_path , class: "btn btn-default" %>
+			</div>
+
+			<div class= col-xs-3>
+				<%= link_to "お気に入り一覧ページへ", bookmarks_path, class: "glyphicon glyphicon-paperclip btn btn-default"%>
+			</div>
+
+			<div class= col-xs-3>
+				<%= link_to "マイページの編集をする", edit_user_path,  class: "btn btn-default" %>
+			</div>
+
+			<div class= col-xs-3>
+				<%= link_to "投稿一覧へ", posts_path, class: "btn btn-default" %>
+			</div>
+		</div>
+	</div>
 </div>

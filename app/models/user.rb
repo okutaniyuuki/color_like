@@ -3,10 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  has_many :bookmarks
   has_many :posts, through: :bookmarks
   has_many :favorites
-  has_many :bookmarks
+
 
   attachment :image, destroy: false
 
