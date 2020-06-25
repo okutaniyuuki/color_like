@@ -11,7 +11,7 @@
 					<%= post.user.first_name %>
 				</td>
 				<td>
-					<%= attachment_image_tag(post, :after_image, :fill, 150, 150, fallback: "no_image.jpg") %>
+					<%= attachment_image_tag(post, :after_image,  size: "150x150", fallback: "no_image.jpg") %>
 				</td>
 				<th><%= post.name %></th>
 
@@ -24,7 +24,7 @@
 				</td>
 
 				<th>
-					<ハートのアイコン挿入>
+					<p>もらったいいね<i  class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
 					<%= post.favorites.count %>
 				</th>
 

@@ -32,7 +32,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
+  def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      redirect_to root_path
+    else
+      render "edit"
+    end
 
   end
 

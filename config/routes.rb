@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :users, only:[:show, :edit, :update, :new]
+  resources :users, only:[:show, :edit, :update, :new, :destroy]
   resources :posts do
     post 'createbookmarks'
     delete 'desbookmarks'

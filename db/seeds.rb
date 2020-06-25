@@ -30,5 +30,12 @@ MakerJanru.create(name: "マニパニ")
 MakerJanru.create(name: "モルトベーネ")
 
 
+User.create(
+             email: "oku085276@gmail.com",
+             password:  "123456",
+             password_confirmation: "123456",
+             admin: true)
+
+
 
 

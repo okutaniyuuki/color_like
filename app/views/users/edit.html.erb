@@ -4,12 +4,12 @@
 	<h1>マイページ編集</h1>
 		<%= form_for(@user) do |f| %>
 
-	   		
+
 		   		<label><h3>アイコン</h3></label>
 		   		<div>
 				<%= f.attachment_field :image %>
 			    </div>
-			
+
 
 			<div>
 				<label><h3>苗字</h3></label>
@@ -38,6 +38,9 @@
 				<%= f.submit "編集内容を保存する", class: "btn btn-success" %>
 			</div>
 		<% end %>
+		<div>
+		    	<%= link_to "このアカウントを削除する", user_path(@user.id), method: :delete, class: "btn btn-danger" %>
+		</div>
 </div>
 
 

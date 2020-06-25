@@ -9,10 +9,10 @@
 		</tr>
 
 		<tr>
-			<%= attachment_image_tag(@post, :post_image, :fill, 150, 150, fallback: "no_image.jpg") %>
+			<%= attachment_image_tag(@post, :post_image, size:"150x150", fallback: "no_image.jpg") %>
 		</tr>
 		<tr>
-			<%= attachment_image_tag(@post, :after_image, :fill, 150, 150, fallback: "no_image.jpg") %>
+			<%= attachment_image_tag(@post, :after_image, size:"150x150", fallback: "no_image.jpg") %>
 		</tr>
 		<br>
 	    <tr>
@@ -79,7 +79,8 @@
 
 
 		<div>
-			<% if @user == current_user %>
+			<%if  @user ==current_user || current_user.admin?  %>
+
 				<%= link_to "投稿内容編集ページへ", edit_post_path(@post), class: "btn btn-success" %>
 				<%= link_to "投稿を削除する", post_path(@post), method: :delete, class: "btn btn-danger" %>
 			<% end %>

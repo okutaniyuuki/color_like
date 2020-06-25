@@ -4,10 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :bookmarks
-  has_many :posts, through: :bookmarks
+  has_many :posts
   has_many :favorites
 
-
   attachment :image, destroy: false
+
+
 
  end
