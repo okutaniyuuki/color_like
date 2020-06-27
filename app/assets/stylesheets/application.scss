@@ -17,31 +17,43 @@
 @import "bootstrap";
 
 #container{
-  height: 400px;
+  height: 600px;
 }
 
 .image1 {
-background-image: url(hair3.jpg);
+background-image: image-url("hair3.jpg");
 
 }
 
 .image2 {
-background-image: url(color3.jpg);
+background-image: image-url("color3.jpg");
 
 }
 
 .image3 {
-background-image: url(item2.jpg);
+background-image: image-url("item2.jpg");
 
 }
 
 .image4 {
-background-image: url(item.jpg);
+background-image: image-url("item.jpg");
 
 }
 
 .image5 {
-background-image: url(hair4.jpg);
+background-image: image-url("hair4.jpg");
 
 }
 
+
+.headercolor{
+	background-color: transparent;
+}
+
+.navlist{
+	padding-top: 50px;
+}
+
+.li-1{
+	color: red ;
+}

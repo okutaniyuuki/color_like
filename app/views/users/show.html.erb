@@ -1,7 +1,7 @@
-<div class="usershow">
+<div class="usercolor">
 	<div class="text-center">
 
-			<h1>マイページ</h1>
+			<h1 class="h1">マイページ</h1>
 
 			<table class="table table-bordered">
 				<tr>
@@ -37,21 +37,17 @@
 				</tr>
 			</table>
 			<div>
-					<h4><%= link_to"お問い合わせはこちら", message_index_path, class: "btn btn-danger" %></h4>
+					<h4><%= link_to"お問い合わせはこちら", message_index_path, class: "btn btn-danger  glyphicon glyphicon-envelope" %></h4>
 			</div>
 
 
-			<h1>自分の投稿一覧</h1>
+			<h1 class="h1">自分の投稿一覧</h1>
 
 
 			<table class="table table-bordered">
 				<% @post.each do |post| %>
 					<tr>
-						<td>
-							<%= post.user.last_name %>
-							<%= post.user.first_name %>
 
-						</td>
 						<td>
 							<%= attachment_image_tag(post, :after_image, size:"150x150", fallback: "no_image.jpg") %>
 						</td>
@@ -83,7 +79,7 @@
 
 
 			<div class= col-xs-3>
-				<%= link_to "投稿ページへ", new_post_path , class: "btn btn-default" %>
+				<%= link_to "投稿ページへ", new_post_path , class: "btn btn-default glyphicon glyphicon-pencil" %>
 			</div>
 
 			<div class= col-xs-3>
@@ -97,8 +93,7 @@
 			<div class= col-xs-3>
 				<%= link_to "マイページの編集をする", edit_user_path,  class: "btn btn-default" %>
 			</div>
-		    <div>
-		    	<%= link_to "このアカウントを削除する", root_path, class: "btn btn-danger" %>
+
 			<% end %>
 
 

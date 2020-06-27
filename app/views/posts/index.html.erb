@@ -1,46 +1,38 @@
+<div class="postcolor">
+	<div class="text-center">
+		<h1 class="h1">投稿一覧</h1>
+
+		<table class="table table-bordered">
+						<% @posts.each do |post| %>
+							<tr>
+
+								<td>
+									<%= attachment_image_tag(post, :after_image, size:"150x150", fallback: "no_image.jpg") %>
+								</td>
+								<th><%= post.name %></th>
+
+								<td>
+									<%=	post.maker_janru_id %>
+								</td>
+
+								<td>
+									<%= post.color_janru_id %>
+								</td>
+
+								<th>
+									<p>もらったいいね<i  class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
+									<%= post.favorites.count %></p>
+								</th>
 
 
-
-<div class="text-center">
-	<h1>投稿一覧</h1>
-	<table class="table table-bordered">
-		<% @posts.each do |post| %>
-			<tr>
-				<td>
-					<%= post.user.last_name %>
-					<%= post.user.first_name %>
-				</td>
-				<td>
-					<%= attachment_image_tag(post, :after_image,  size: "150x150", fallback: "no_image.jpg") %>
-				</td>
-				<th><%= post.name %></th>
-
-				<td>
-					<%=	post.maker_janru_id %>
-				</td>
-
-				<td>
-					<%= post.color_janru_id %>
-				</td>
-
-				<th>
-					<p>もらったいいね<i  class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
-					<%= post.favorites.count %>
-				</th>
-
-
-				<td>
-					<%= link_to "この投稿詳細へ", post_path(post), class: "btn btn-info" %>
-				</td>
-			</tr>
-		<% end %>
-
-	</table>
-	<div>
-		<%= paginate @posts %>
+								<td>
+									<%= link_to "この投稿詳細へ", post_path(post), class: "btn btn-primary" %>
+								</td>
+							</tr>
+						<% end %>
+		</table>
+		<div>
+			<%= paginate @posts %>
+		</div>
 	</div>
 </div>
-
-
-
-

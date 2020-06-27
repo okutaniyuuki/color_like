@@ -1,44 +1,48 @@
+<div class="postcolor">
+	<!--<div class="text-center">-->
+	<div style="margin: 0 auto; width: 50%;">
+		<h1 class="h1">投稿ページ</h1>
+			<%= form_for(@post) do |f| %>
 
-<div class="text-center">
-	<h1>投稿ページ</h1>
-		<%= form_for(@post) do |f| %>
-			 <div>
-				<label><h3>　Before画像</h3></label>
-				<%= f.attachment_field :post_image %>
-			 </div>
-
-			 <div>
-				<label><h3>　After画像</h3></label>
-				<%= f.attachment_field :after_image %>
-			 </div>
-
-			 <div>
-			 	<label><h3>使用薬剤メーカー</h3></label>
-			 	<%= f.select :maker_janru_id, [["シュワルツコフ","シュワルツコフ"], ["資生堂","資生堂"], ["ミルボン","ミルボン"], ["モルトベーネ","モルトベーネ"], ["ロレアル","ロレアル"], ["hoyu","hoyu"], ["ルベル","ルベル"], ["ウェラ","ウェラ"], ["マニパニ","マニパニ"], ["その他","その他"] ], prompt: "使用メーカーを選びください。" %>
-
-			 </div>
+					<label><h3>　Before画像</h3></label>
+				 <div calss= "image-box">
+					<%= f.attachment_field :post_image %>
+				 </div>
 
 
+					<label><h3>　After画像</h3></label>
+				 <div calss= "image-box">
+					<%= f.attachment_field :after_image %>
+				 </div>
 
-			 <div>
-			 	<label><h3>色味</h3></label>
-		　　		<%= f.select :color_janru_id, [["赤系","赤系"], ["ピンク系","ピンク系"], ["オレンジ系","オレンジ系"], ["アッシュ系","アッシュ系"], ["マット系",	"マット系"], ["パープル系","パープル系"], ["ベージュ系","ベージュ系"], ["シルバー・グレー・モノトーン系","シルバー・グレー・モノトーン系"], ["ホワイト系","ホワイト系"], ["その他","その他"] ], prompt: "色味を選択して下さい。" %>
+				 <div>
+				 	<label><h3>使用薬剤メーカー</h3></label>
+				 	<%= f.select :maker_janru_id, [["シュワルツコフ","シュワルツコフ"], ["資生堂","資生堂"], ["ミルボン","ミルボン"], ["モルトベーネ","モルトベーネ"], ["ロレアル","ロレアル"], ["hoyu","hoyu"], ["ルベル","ルベル"], ["ウェラ","ウェラ"], ["マニパニ","マニパニ"], ["その他","その他"] ], prompt: "使用メーカーを選びください。" %>
 
-			 </div>
+				 </div>
 
-			 <div>
-			 	<label><h3>投稿者名</h3></label>
-			 	<%= f.text_field :name %>
-			 </div>
 
-			 <div>
-			 	<label><h3>配合・施術の説明</h3></label>
-			 	<%= f.text_area :option %>
-			 </div>
 
-			 <div>
-			 	<%= f.submit "投稿する", class: "btn btn-primary"%>
-			 </div>
+				 <div>
+				 	<label><h3>色味</h3></label>
+			　　		<%= f.select :color_janru_id, [["赤系","赤系"], ["ピンク系","ピンク系"], ["オレンジ系","オレンジ系"], ["アッシュ系","アッシュ系"], ["マット系",	"マット系"], ["パープル系","パープル系"], ["ベージュ系","ベージュ系"], ["シルバー・グレー・モノトーン系","シルバー・グレー・モノトーン系"], ["ホワイト系","ホワイト系"], ["その他","その他"] ], prompt: "色味を選択して下さい。" %>
 
-		<% end %>
+				 </div>
+
+				 <div>
+				 	<label><h3>投稿者名</h3></label>
+				 	<%= f.text_field :name %>
+				 </div>
+
+				 <div>
+				 	<label><h3>配合・施術の説明</h3></label>
+				 	<%= f.text_area :option %>
+				 </div>
+
+				 <div>
+				 	<%= f.submit "投稿する", class: "btn btn-primary"%>
+				 </div>
+
+			<% end %>
+	</div>
 </div>

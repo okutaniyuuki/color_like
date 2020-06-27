@@ -1,89 +1,90 @@
 
+<div class="postcolor">
+	<div class="text-center">
+		<h1 class="h1">詳しい投稿内容</h1>
 
-<div class="text-center">
-	<h1>詳しい投稿内容</h1>
+		<table class="table table-bordered">
+			<tr>
+				<h3>Before After画像</h3>
+			</tr>
 
-	<table class="table table-bordered">
-		<tr>
-			<h3>Before After画像</h3>
-		</tr>
+			<tr>
+				<%= attachment_image_tag(@post, :post_image, size:"150x150", fallback: "no_image.jpg") %>
+			</tr>
+			<tr>
+				<%= attachment_image_tag(@post, :after_image, size:"150x150", fallback: "no_image.jpg") %>
+			</tr>
+			<br>
+		    <tr>
 
-		<tr>
-			<%= attachment_image_tag(@post, :post_image, size:"150x150", fallback: "no_image.jpg") %>
-		</tr>
-		<tr>
-			<%= attachment_image_tag(@post, :after_image, size:"150x150", fallback: "no_image.jpg") %>
-		</tr>
-		<br>
-	    <tr>
+				<%= link_to @post.user.last_name, user_path(@post.user) %>
+				<%= link_to @post.user.first_name, user_path(@post.user) %>
+			</tr>
 
-			<%= link_to @post.user.last_name, user_path(@post.user) %>
-			<%= link_to @post.user.first_name, user_path(@post.user) %>
-		</tr>
+			<tr>
+				<h3>使用薬剤メーカー</h3>
+			</tr>
+			<tr>
+				<%= @post.maker_janru_id %>
+			</tr>
 
-		<tr>
-			<h3>使用薬剤メーカー</h3>
-		</tr>
-		<tr>
-			<%= @post.maker_janru_id %>
-		</tr>
+			<tr>
+				<h3>色味</h3>
+			</tr>
+			<tr>
+				<%= @post.color_janru_id %>
+			</tr>
 
-		<tr>
-			<h3>色味</h3>
-		</tr>
-		<tr>
-			<%= @post.color_janru_id %>
-		</tr>
+			<tr>
+				<h3>投稿者名</h3>
+			</tr>
+			<tr>
+				<%= @post.name %>
+			</tr>
 
-		<tr>
-			<h3>投稿者名</h3>
-		</tr>
-		<tr>
-			<%= @post.name %>
-		</tr>
+			<tr>
+				<h3>配合・施術の説明</h3>
+			</tr>
 
-		<tr>
-			<h3>配合・施術の説明</h3>
-		</tr>
+			<tr>
+				<%= @post.option %>
+			</tr>
 
-		<tr>
-			<%= @post.option %>
-		</tr>
+			<tr>
+				<% if @post.favorited_by?(current_user) %>
+					<li>
+					    <%= link_to post_desfavorites_path(post_id: @post.id , redirect_id: 0), method: :delete do %>
+					    <i  class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
+					    <%= @post.favorites.count %>
+					    <% end %>
+					</li>
+					<% else %>
+					<li>
+					    <%= link_to post_createfavorites_path(post_id: @post.id, redirect_id: 0), method: :post do %>
+					    <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
+					    <%= @post.favorites.count %>
 
-		<tr>
-			<% if @post.favorited_by?(current_user) %>
-				<li>
-				    <%= link_to post_desfavorites_path(post_id: @post.id , redirect_id: 0), method: :delete do %>
-				    <i  class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
-				    <%= @post.favorites.count %>
-				    <% end %>
-				</li>
-				<% else %>
-				<li>
-				    <%= link_to post_createfavorites_path(post_id: @post.id, redirect_id: 0), method: :post do %>
-				    <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
-				    <%= @post.favorites.count %>
+					    <% end %>
+					</li>
+				<% end %>
+			</tr>
+			<tr>
+				<%= link_to "この投稿をお気に入り登録", post_createbookmarks_path(@post.id), method: :post,  class: "btn btn-info glyphicon glyphicon-pushpin" %>
+			</tr>
+		</table>
 
-				    <% end %>
-				</li>
-			<% end %>
-		</tr>
-		<tr>
-			<%= link_to "この投稿をお気に入り登録", post_createbookmarks_path(@post.id), method: :post,  class: "btn btn-info" %>
-		</tr>
-	</table>
-
-		<div>
-			<%= link_to "投稿一覧に戻る", posts_path, class: "btn btn-primary" %>
-		</div>
+			<div>
+				<%= link_to "投稿一覧に戻る", posts_path, class: "btn btn-primary" %>
+			</div>
 
 
-		<div>
-			<%if  @user ==current_user || current_user.admin?  %>
+			<div>
+				<%if  @user ==current_user || current_user.admin?  %>
 
-				<%= link_to "投稿内容編集ページへ", edit_post_path(@post), class: "btn btn-success" %>
-				<%= link_to "投稿を削除する", post_path(@post), method: :delete, class: "btn btn-danger" %>
-			<% end %>
+					<%= link_to "投稿内容編集ページへ", edit_post_path(@post), class: "btn btn-success" %>
+					<%= link_to "投稿を削除する", post_path(@post), method: :delete, class: "btn btn-danger glyphicon glyphicon-trash"%>
+				<% end %>
 
-		</div>
+			</div>
+	</div>
 </div>

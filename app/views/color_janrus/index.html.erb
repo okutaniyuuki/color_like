@@ -1,18 +1,19 @@
+<div class= "cjcolor">
+	<main class="container">
+		<div class= "jumbotron">
+			<div class= "cj-main">
+				<div class="text-center text-muted">
+					<h1 class="h1">色検索</h1>
+					<div class="form-group">
+						<%= form_with url:post_search_path,method: :get, local: true do |f| %>
+							<%= f.collection_select(:color_janru_name, @color, :name, :name,  prompt: "仕上がりの色味を選択してください") %>
+							<%= f.submit "検索", class: "btn btn-warning" %>
 
-<main class="container">
-	<div class= "jumbotron">
-		<div class= "cj-main">
-			<div class="text-center text-muted">
-				<h1>色検索</h1>
-				<div class="form-group">
-					<%= form_with url:post_search_path,method: :get, local: true do |f| %>
-						<%= f.collection_select(:color_janru_name, @color, :name, :name,  prompt: "仕上がりの色味を選択してください") %>
-						<%= f.submit "検索", class: "btn btn-warning" %>
-
-				  	<% end %>
+					  	<% end %>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</main>
+	</main>
+</div>
 

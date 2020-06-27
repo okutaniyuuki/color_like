@@ -1,39 +1,41 @@
-<div class="text-center">
-	<h1>新規マイページ登録</h1>
-		<%= form_for(@user) do |f| %>
+<div class="usercolor">
+	<div class="text-center">
+		<h1 class="h1">新規マイページ登録</h1>
+			<%= form_for(url: user_path) do |f| %>
 
-	   		<div>
-		   		<label><h3>アイコン</h3></label>
-				<%= f.attachment_field :image %>
-			</div>
+		   		<div>
+			   		<label><h3>アイコン</h3></label>
+					<%= f.attachment_field :image %>
+				</div>
 
-			<div>
-				<label><h3>苗字</h3></label>
-				<%= f.text_field :frist_name %>
+				<div>
+					<label><h3>苗字</h3></label>
+					<%= f.text_field :frist_name %>
 
-				<label><h3>名前</h3></label>
-				<%= f.text_field :last_name %>
-			</div>
+					<label><h3>名前</h3></label>
+					<%= f.text_field :last_name %>
+				</div>
 
-			<div>
-				<label><h3>得意な技術</h3></label>
-				<%= f.text_field :forte %>
-			</div>
+				<div>
+					<label><h3>得意な技術</h3></label>
+					<%= f.text_field :forte %>
+				</div>
 
-			<div>
-				<label><h3>好きなメーカー</h3></label>
-				<%= f.text_field :like_maker %>
-			</div>
+				<div>
+					<label><h3>好きなメーカー</h3></label>
+					<%= f.text_field :like_maker %>
+				</div>
 
-			<div>
-				<label><h3>プロフィール</h3></label>
-				<%= f.text_area :introduction %>
-			</div>
+				<div>
+					<label><h3>プロフィール</h3></label>
+					<%= f.text_area :introduction %>
+				</div>
 
-			<div>
-				<%= f.submit "更新", class: "btn btn-suceess" %>
-			</div>
-		<% end %>
+				<div>
+					<%= f.submit "登録", class: "btn btn-suceess" %>
+				</div>
+			<% end %>
+	</div>
 </div>
 
 
