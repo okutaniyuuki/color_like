@@ -16,6 +16,8 @@ ColorJanru.create(name: "パープル系")
 ColorJanru.create(name: "ベージュ系")
 ColorJanru.create(name: "シルバー・グレー・モノトーン系")
 ColorJanru.create(name: "ホワイト系")
+ColorJanru.create(name: "グレージュ系")
+ColorJanru.create(name: "ブラウン系")
 ColorJanru.create(name: "その他")
 
 MakerJanru.create(name: "その他")
@@ -28,12 +30,16 @@ MakerJanru.create(name: "ルベル")
 MakerJanru.create(name: "hoyu")
 MakerJanru.create(name: "マニパニ")
 MakerJanru.create(name: "モルトベーネ")
+MakerJanru.create(name: "DEMI")
+MakerJanru.create(name: "ARIMINO")
+MakerJanru.create(name: "No.3")
+
 
 
 User.create(
              email: "oku085276@gmail.com",
-             password:  "123456",
-             password_confirmation: "123456",
+             password:  "085276",
+             password_confirmation: "085276",
              admin: true)
 
 

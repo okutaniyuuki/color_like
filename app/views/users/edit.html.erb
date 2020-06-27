@@ -1,6 +1,6 @@
 
 <div class="usercolor">
-	<div class="text-center">
+	<div style ="margin: 0 auto; width: 50%;">
 		<h1 class="h1">マイページ編集</h1>
 			<%= form_for(@user) do |f| %>
 
@@ -12,10 +12,10 @@
 
 
 				<div>
-					<label><h3>苗字</h3></label>
+					<label><h3>苗字(サロン名でも可)</h3></label>
 					<%= f.text_field :first_name %>
 
-					<label><h3>名前</h3></label>
+					<label><h3>名前(サロン名でも可)</h3></label>
 					<%= f.text_field :last_name %>
 				</div>
 

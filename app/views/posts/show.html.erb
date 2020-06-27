@@ -76,8 +76,9 @@
 			<div>
 				<%= link_to "投稿一覧に戻る", posts_path, class: "btn btn-primary" %>
 			</div>
-
-
+			<br>
+			<br>
+			<!--編集と削除はログインユーザーとアドミンアカウントのみ表示-->
 			<div>
 				<%if  @user ==current_user || current_user.admin?  %>
 

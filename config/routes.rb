@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get 'message/confirm' => 'message#confirm'
   get 'message/done'    => 'message#done'
 
-  #get 'posts/search'   =>  'posts#search'
+
   get 'post_search'   =>  'posts#search', as:   'post_search'
-  #get 'users/index/:id' => 'users#index'
+
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -24,7 +24,6 @@ Rails.application.routes.draw do
     delete 'desfavorites'
   end
   resources :bookmarks,only:[:index]
- # resources :favorites, only:[:create, :destroy]
   resources :maker_janrus, only:[:index, :create]
   resources :color_janrus, only:[:index]
 
