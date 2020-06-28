@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -22,27 +23,22 @@
 
 .image1 {
 background-image: image-url("hair3.jpg");
-
 }
 
 .image2 {
 background-image: image-url("color3.jpg");
-
 }
 
 .image3 {
 background-image: image-url("item2.jpg");
-
 }
 
 .image4 {
 background-image: image-url("item.jpg");
-
 }
 
 .image5 {
 background-image: image-url("hair4.jpg");
-
 }
 
 
@@ -53,4 +49,3 @@ background-color: transparent;
 .navlist {
 padding-top: 50px;
 }
-
