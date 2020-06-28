@@ -82,14 +82,19 @@ gem "font-awesome-sass"
 
 gem "sorcery"
 
+#logn_in
 gem 'devise'
 
+#画像
 gem 'ransack'
 
 gem "sass-rails", "~>5.0"
 gem "bootstrap-sass", "~>3.3.6"
 gem "jquery-ui-rails"
 
-
-
+#デプロイ
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
 

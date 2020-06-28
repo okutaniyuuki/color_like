@@ -48,6 +48,7 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+ #検索でつかう
  def search
 
   if (params[:maker_janru_name].nil?)
@@ -58,6 +59,7 @@ class PostsController < ApplicationController
   render :index
  end
 
+ #bookmarkを追加するときに使う
  def createbookmarks
     @bookmark = Bookmark.new(post_id:params[:post_id], user_id: current_user.id)
     if @bookmark.save
@@ -67,20 +69,21 @@ class PostsController < ApplicationController
     end
  end
 
+ #bookmarkを削除すると時に使う
  def desbookmarks
   @bookmark = Bookmark.find_by(post_id:params[:post_id],user_id:current_user.id)
     if @bookmark.destroy
     redirect_to bookmarks_path
     end
  end
-
+ #いいねをつけるときに使う
  def createfavorites
      @post = Post.find(params[:post_id])
       favorite = @post.favorites.new(user_id: current_user.id)
             favorite.save!
             redirect_to request.referer
  end
-
+ #いいねを消すときに使う
  def desfavorites
     post = Post.find(params[:post_id])
             favorite = current_user.favorites.find_by(post_id: post.id)

@@ -3,7 +3,9 @@
 <div class="postcolor">
 
 	<div style ="margin: 0 auto; width: 50%;">
-		<h1 class="h1">投稿内容の編集</h1>
+		<h1 class="h1">投稿内容の編集</h1><br>
+			<h3>＊ (薬剤に関する情報だけの場合はBefore・After共に薬剤の写真でお願いします。)</h3><br>
+			<h3>＊ (After画像はできるだけ無加工でおねがいします。)</h3>
 
 			<%= form_for(@post) do |f| %>
 				 <div>
@@ -40,7 +42,7 @@
 				 <div>
 
 				 <div>
-				 	<label><h3>配合・施術の説明(ブリーチを使用した場合は必ず記入お願いします。)</h3></label><br>
+				 	<label><h3>薬剤の情報や配合比率・施術の手順説明(ブリーチを使用した場合は必ず記入お願いします。)</h3></label><br>
 				 	<%= f.text_area :option %>
 				 </div>
 

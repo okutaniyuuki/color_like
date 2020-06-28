@@ -9,7 +9,10 @@
 								<td>
 									<%= attachment_image_tag(post, :after_image, size:"150x150", fallback: "no_image.jpg") %>
 								</td>
-								<th><%= post.name %></th>
+
+								<td>
+									<%= post.name %>
+								</td>
 
 								<td>
 									<%=	post.maker_janru_id %>
@@ -19,10 +22,10 @@
 									<%= post.color_janru_id %>
 								</td>
 
-								<th>
+								<td>
 									<p>もらったいいね<i  class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
 									<%= post.favorites.count %></p>
-								</th>
+								</td>
 
 
 								<td>

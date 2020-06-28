@@ -36,9 +36,11 @@
 					<%= @user.introduction %>
 				</tr>
 			</table>
-			<div>
-					<h4><%= link_to"お問い合わせはこちら", message_index_path, class: "btn btn-danger  glyphicon glyphicon-envelope" %></h4>
-			</div>
+			<%if  @user ==current_user || current_user.admin?  %>
+				<div>
+						<h4><%= link_to"お問い合わせはこちら", message_index_path, class: "btn btn-danger  glyphicon glyphicon-envelope" %></h4>
+				</div>
+			<% end %>
 
 
 			<h1 class="h1">自分の投稿一覧</h1>
@@ -51,7 +53,9 @@
 						<td>
 							<%= attachment_image_tag(post, :after_image, size:"150x150", fallback: "no_image.jpg") %>
 						</td>
-						<th><%= post.name %></th>
+						<td>
+							<%= post.name %>
+						</td>
 
 						<td>
 							<%=	post.maker_janru_id %>
@@ -61,10 +65,10 @@
 							<%= post.color_janru_id %>
 						</td>
 
-						<th>
+						<td>
 							<p>もらったいいね<i  class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
 							<%= post.favorites.count %></p>
-						</th>
+						</td>
 
 
 						<td>
@@ -86,7 +90,7 @@
 				<%= link_to "お気に入り一覧ページへ", bookmarks_path, class: "glyphicon glyphicon-paperclip btn btn-default"%>
 			</div>
 			<div class= col-xs-3>
-				<%= link_to "投稿一覧へ", posts_path, class: "btn btn-default" %>
+				<%= link_to "全ての投稿一覧へ", posts_path, class: "btn btn-default" %>
 			</div>
             <%if  @user ==current_user || current_user.admin?  %>
 

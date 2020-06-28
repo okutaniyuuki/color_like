@@ -34,14 +34,9 @@ MakerJanru.create(name: "DEMI")
 MakerJanru.create(name: "ARIMINO")
 MakerJanru.create(name: "No.3")
 
-
-
-User.create(
+User.create( first_name: "admin",
+			 last_name: "admin",
              email: "oku085276@gmail.com",
              password:  "085276",
              password_confirmation: "085276",
              admin: true)
-
-
-
-

@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   attachment :image, destroy: false
 
+  validates :last_name, presence: true
+  validates :first_name, presence: true
 
 
  end

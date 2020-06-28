@@ -10,6 +10,9 @@ belongs_to :user
 attachment :post_image
 attachment :after_image
 
+validates :color_janru_id, presence: true
+validates :maker_janru_id, presence: true
+
 
 
   def favorited_by?(user)
