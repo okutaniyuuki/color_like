@@ -90,7 +90,7 @@ Rails.application.configure do
   end
 
   # Do not dump schema after migrations.
- config.action_mailer.default_url_options = {  :host => '54.249.211.46' }
+ config.action_mailer.default_url_options = {  :host => 'http://54.249.211.46' }
   #送信方法を指定（この他に:sendmail/:file/:testなどがあります)
   config.action_mailer.delivery_method = :smtp
   #送信方法として:smtpを指定した場合は、このconfigを使って送信詳細の設定を行います
