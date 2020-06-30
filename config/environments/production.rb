@@ -105,6 +105,7 @@ Rails.application.configure do
     user_name: mail,
     password: pass,
     #パスワードをBase64でエンコード
-    authentication: :login
+    authentication: :login,
+    enable_starttls_auto: true
   }
 end
