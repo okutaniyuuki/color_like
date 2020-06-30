@@ -94,8 +94,8 @@ Rails.application.configure do
   #送信方法を指定（この他に:sendmail/:file/:testなどがあります)
   config.action_mailer.delivery_method = :smtp
   #送信方法として:smtpを指定した場合は、このconfigを使って送信詳細の設定を行います
-  mail = ENV['oku085276@gmail.com']
-  pass = ENV['oy08520706']
+  mail = ENV['GMAILUSER_NAME']
+  pass = ENV['GMAILPASSWORD']
   config.action_mailer.smtp_settings = {
     #gmail利用時はaddress,domain,portは下記で固定
     address:"smtp.gmail.com",
