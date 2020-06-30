@@ -100,8 +100,8 @@ Rails.application.configure do
     domain: 'gmail.com',
     port:587,
     #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
-    user_name:            ENV['GMAILUSER_NAME'],
-    password:             ENV['GMAILPASSWORD'],
+    user_name:"oku085276@gmail.com",
+    password:'oy08520706',
     #パスワードをBase64でエンコード
     authentication: :login
   }
